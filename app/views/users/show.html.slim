@@ -1,0 +1,29 @@
+- breadcrumb :user, @user
+.container
+  .row
+    .panel.panel-default
+      .panel-body
+        = link_to edit_user_path(@user), class: 'btn btn-primary' do
+          = I18n.t("ui.edit")
+          span.glyphicon.glyphicon-pencil
+        = link_to user_path(@user), class: 'btn btn-danger pull-right', method: :delete, data: {confirm: I18n.t("ui.confirm_delete")} do
+          = I18n.t("ui.delete")
+          span.glyphicon.glyphicon-trash
+  .row
+    .col-md-6.bg-info
+      h1.text-center Basic Info
+      .row
+        .col-xs-4
+          p.text-right= User.human_attribute_name 'login'
+        .col-xs-8
+          p= @user.login
+      .row
+        .col-xs-4
+          p.text-right= User.human_attribute_name 'email'
+        .col-xs-8
+          p= @user.email
+      .row
+        .col-xs-4
+          p.text-right= User.human_attribute_name 'super'
+        .col-xs-8
+          p= I18n.t(@user.super ? 'yes' : 'no')

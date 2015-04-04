@@ -1,0 +1,5 @@
+# Ignore Database Backups
+/backup
+
+# Ignore yaml_db data file
+/data.yml

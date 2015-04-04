@@ -1,0 +1,7 @@
+- breadcrumb :members_email_list
+.container
+  - @members.find_in_batches(batch_size: 500) do |batch|
+    .row
+      .panel.panel-default
+        .panel-body
+          p= batch.map{|m| m.emails.join(', ') }.join(', ')

@@ -1,0 +1,7 @@
+zh-TW:
+  ui:
+    user_management: 工作人員管理
+    users:
+      index: 所有工作人員
+      new: 新增工作人員
+      edit: 編輯工作人員

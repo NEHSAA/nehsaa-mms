@@ -1,0 +1,36 @@
+- breadcrumb :members
+.container
+  .row
+    .panel.panel-default
+      .panel-body
+        = link_to new_member_path, class: 'btn btn-default' do
+          = I18n.t("ui.members.new")
+          span.glyphicon.glyphicon-plus
+        = link_to({controller: :members, action: :moi_sheet}, {class: "btn btn-default"}) do
+          = I18n.t('ui.members.moi_sheet')
+          span.glyphicon.glyphicon-list-alt
+        = link_to({controller: :members, action: :email_list}, {class: "btn btn-default"}) do
+          = I18n.t('ui.members.email_list')
+        = link_to({controller: :members_import, action: :index}, {class: "btn btn-default"}) do
+          = I18n.t('ui.members.import')
+  .row
+    == grid(@member_grid, show_filters: :always) do |g|
+      - g.column(name: 'ID', attribute: 'id', filter: false) do |m|
+        - link_to(m.id, member_path(m))
+      - g.column(name: Member.human_attribute_name('name'), attribute: 'name') do |m|
+        - link_to(m.name, member_path(m))
+      - g.column(name: Member.human_attribute_name('gender'), attribute: 'gender', filter: false) do |m|
+        - m.gender.text
+      - g.column(name: Member.human_attribute_name('birthdate'), attribute: 'birthdate', filter: false)  do |m|
+        - I18n.l m.birthdate, format: :long
+      - g.column(name: Member.human_attribute_name('security_id'), attribute: 'security_id')
+      - g.column(name: Member.human_attribute_name('member_type'), attribute: 'member_type', filter: false) do |m|
+        - m.member_type.text
+      - g.column(name: Member.human_attribute_name('membership?')) do |m|
+        - I18n.t(m.membership? ? 'yes' : 'no')
+      - g.column(name: Member.human_attribute_name('valid?')) do |m|
+        - I18n.t(m.valid? ? 'yes' : 'no')
+      - g.column do |m|
+        - link_to(edit_member_path(m)) do
+          span.glyphicon.glyphicon-pencil
+          span= I18n.t("ui.edit")

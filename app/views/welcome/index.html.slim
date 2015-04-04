@@ -1,0 +1,13 @@
+.container
+  .row
+    h1.text-center #{ I18n.t('nehsaa') }
+  .row
+    .panel.panel-default
+      .panel-heading
+        h3.panel-title 快速搜尋會員
+      .panel-body
+        = form_tag({action: :search_member}, class: 'form-inline', method: 'get') do
+          .form-group
+            = label_tag(:security_id, Member.human_attribute_name(:security_id))
+            = text_field_tag(:security_id, nil, class: 'form-control')
+          = submit_tag('Search', class: 'btn btn-default')

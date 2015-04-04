@@ -1,0 +1,9 @@
+/production
+/staging
+/tmp
+/keys
+*.pem
+*.key
+*.cert
+*.crt
+*.csr

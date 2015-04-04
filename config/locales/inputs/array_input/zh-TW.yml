@@ -1,0 +1,4 @@
+zh-TW:
+  ui:
+    array_input:
+      allow_blank: 可留白

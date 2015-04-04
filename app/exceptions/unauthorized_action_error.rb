@@ -1,0 +1,2 @@
+class UnauthorizedActionError < Exception
+end

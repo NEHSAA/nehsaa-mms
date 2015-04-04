@@ -1,0 +1,23 @@
+- breadcrumb :members_moi_sheet
+table
+  thead
+    tr
+      th= Member.human_attribute_name('name')
+      th= Member.human_attribute_name('gender')
+      th= Member.human_attribute_name('birthdate')
+      th= Member.human_attribute_name('education')
+      th= Member.human_attribute_name('occupation')
+      th= Member.human_attribute_name('address')
+      th= Member.human_attribute_name('phones')
+      th= Member.human_attribute_name('comments')
+  tbody
+    - @members.find_each.select(&:membership?).each do |m|
+      tr
+        td= m.name
+        td= m.gender.text
+        td= I18n.l m.birthdate, format: :long
+        td= m.education
+        td= m.occupation
+        td= m.address
+        td= m.phones.join(', ')
+        td

@@ -1,0 +1,10 @@
+app:
+  host: <%= host %>
+  secret_key_base: <%= `bundle exec rake secret` %>
+  url_options:
+    host: <%= host %>
+    protocol: https
+database:
+  adapter: postgresql
+  host: localhost
+  port: 5432

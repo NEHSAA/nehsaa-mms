@@ -1,0 +1,15 @@
+zh-TW:
+  ui:
+    member_management: "會員管理"
+    members:
+      index: "所有會員"
+      new: "新增會員"
+      edit: "編輯會員"
+      show: "顯示會員"
+      moi_sheet: "內政部表格"
+      email_list: "E-Mail列表"
+      basic_info: "基本資料"
+      contact_info: "連絡方式"
+      graduation_info: "畢業資料"
+      membership_status: "會員狀態"
+      import: "匯入會員"

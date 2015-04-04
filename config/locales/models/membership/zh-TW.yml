@@ -1,0 +1,7 @@
+zh-TW:
+  activerecord:
+    models:
+      membership: "會員資格"
+    attributes:
+      membership:
+        year: "年份"

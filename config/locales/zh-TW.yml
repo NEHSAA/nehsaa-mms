@@ -1,0 +1,15 @@
+zh-TW:
+  nehsaa: "實驗中學校友會"
+  'yes': "是"
+  'no': "否"
+  ui:
+    home: "首頁"
+    about: "關於"
+    edit: "編輯"
+    delete: "刪除"
+    list: "列表"
+    confirm_delete: "確定刪除？"
+  valid_email:
+    validations:
+      email:
+        invalid: "無效"

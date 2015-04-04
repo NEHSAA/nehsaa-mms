@@ -19,3 +19,18 @@
 .DS_Store
 *.swp
 *~
+
+# Ignore Rails Config Local Files
+/config/settings.local.yml
+/config/settings/*.local.yml
+/config/environments/*.local.yml
+
+# Ignore Admin Related Files
+/admin
+
+# Ignore RVM Swtich Files
+/.ruby-version
+/.ruby-gemset
+
+# Ignore Capistrano Files
+/.capistrano

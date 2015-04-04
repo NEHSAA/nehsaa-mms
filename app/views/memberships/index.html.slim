@@ -1,0 +1,21 @@
+- breadcrumb :memberships, @member
+.container
+  .row
+    .col-md-6.col-md-offset-3
+      table.table.table-hover
+        thead
+          tr
+            th= Membership.human_attribute_name 'year'
+            th
+        tbody
+          - @memberships.each do |ms|
+            tr
+              td= ms.year
+              td
+                = link_to [ms.member, ms], method: :delete do
+                  span.glyphicon.glyphicon-trash
+          tr
+            td= simple_form_for [@membership.member, @membership], html: {class: 'form-inline'} do |f|
+              = f.input :year, input_html: { value: Date.today.year }
+              = f.button :submit
+            td

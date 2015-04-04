@@ -1,0 +1,18 @@
+app:
+  url_options:
+    protocol: https
+database:
+  adapter: postgresql
+  host: localhost
+  port: 5432
+  username: example
+  password: null
+mailer:
+  smtp_settings:
+    address: smtp.example.com
+    port: 587
+    domain: example.com
+    user_name: example
+    password: yooooooooo
+    authentication: :plain
+    enable_starttls_auto: true

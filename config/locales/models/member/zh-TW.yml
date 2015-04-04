@@ -1,0 +1,42 @@
+zh-TW:
+  activerecord:
+    models:
+      member: "會員"
+    attributes:
+      member:
+        name: "姓名"
+        security_id: "身分證字號"
+        birthdate: "生日"
+        gender: "性別"
+        member_type: "會員種類"
+        permanent: "終身會員"
+        emails: "電子郵件"
+        phones: "電話號碼"
+        address: "戶籍地址"
+        occupation: "職業"
+        company: "服務單位"
+        education: "最高學歷"
+        facebook: "臉書帳號"
+        grad_class: "畢業屆別"
+        grad_year: "畢業年份"
+        grad_id: "畢業學號"
+        grad_department: "畢業部別"
+        membership?: "會員資格"
+        valid?: "完整資料"
+        comments: "註解"
+  enumerize:
+    member:
+      gender:
+        male: "男"
+        female: "女"
+        other: "其他"
+      member_type:
+        normal_member: "一般會員"
+        teacher_member: "教師會員"
+        honor_member: "榮譽會員"
+      grad_department:
+        kindergarten: "幼稚園部"
+        elementary: "國小部"
+        junior_high: "國中部"
+        senior_high: "高中部"
+        bilingual: "雙語部"

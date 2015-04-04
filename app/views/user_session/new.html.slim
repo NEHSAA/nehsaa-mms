@@ -1,0 +1,11 @@
+.container
+  .row
+    - if @user_session.errors.any?
+      ul
+        - @user_session.errors.full_messages.each do |msg|
+          li= msg
+  .row
+    = simple_form_for @user_session, url: user_session_path do |f|
+      = f.input :login
+      = f.input :password
+      = f.button :submit, 'Login'

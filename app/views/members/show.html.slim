@@ -1,0 +1,126 @@
+- breadcrumb :member, @member
+.container
+  .row
+    .panel.panel-default
+      .panel-body
+        = link_to edit_member_path(@member), class: 'btn btn-primary' do
+          = I18n.t("ui.edit")
+          span.glyphicon.glyphicon-pencil
+        = link_to member_memberships_path(@member), class: 'btn btn-default' do
+            = Membership.model_name.human
+            span.glyphicon.glyphicon-list-alt
+        = link_to member_path(@member), class: 'btn btn-danger pull-right', method: :delete, data: {confirm: I18n.t("ui.confirm_delete")} do
+          = I18n.t("ui.delete")
+          span.glyphicon.glyphicon-trash
+  .row
+    .col-md-6.bg-info
+      h1.text-center= I18n.t "ui.members.basic_info"
+      .row
+        .col-xs-4
+          p.text-right= Member.human_attribute_name 'name'
+        .col-xs-8
+          p= @member.name
+      .row
+        .col-xs-4
+          p.text-right= Member.human_attribute_name 'gender'
+        .col-xs-8
+          p= @member.gender.text
+      .row
+        .col-xs-4
+          p.text-right= Member.human_attribute_name 'birthdate'
+        .col-xs-8
+          p= I18n.l @member.birthdate, format: :long
+      .row
+        .col-xs-4
+          p.text-right= Member.human_attribute_name 'security_id'
+        .col-xs-8
+          p= @member.security_id
+      .row
+        .col-xs-4
+          p.text-right= Member.human_attribute_name 'education'
+        .col-xs-8
+          p= @member.education
+      .row
+        .col-xs-4
+          p.text-right= Member.human_attribute_name 'occupation'
+        .col-xs-8
+          p= @member.occupation
+      .row
+        .col-xs-4
+          p.text-right= Member.human_attribute_name 'company'
+        .col-xs-8
+          p= @member.company
+    .col-md-6.bg-success
+      h2.text-center= I18n.t "ui.members.contact_info"
+      .row
+        .col-xs-4
+          p.text-right= Member.human_attribute_name 'emails'
+        .col-xs-8
+          p= @member.emails.join(', ')
+      .row
+        .col-xs-4
+          p.text-right= Member.human_attribute_name 'phones'
+        .col-xs-8
+          p= @member.phones.join(', ')
+      .row
+        .col-xs-4
+          p.text-right= Member.human_attribute_name 'address'
+        .col-xs-8
+          p= @member.address
+      .row
+        .col-xs-4
+          p.text-right= Member.human_attribute_name 'facebook'
+        .col-xs-8
+          p= @member.facebook
+  .row
+    .col-md-6
+      h2.text-center= I18n.t "ui.members.graduation_info"
+      .row
+        .col-xs-4
+          p.text-right= Member.human_attribute_name 'grad_class'
+        .col-xs-8
+          p= @member.grad_class
+      .row
+        .col-xs-4
+          p.text-right= Member.human_attribute_name 'grad_year'
+        .col-xs-8
+          p= @member.grad_year
+      .row
+        .col-xs-4
+          p.text-right= Member.human_attribute_name 'grad_id'
+        .col-xs-8
+          p= @member.grad_id
+      .row
+        .col-xs-4
+          p.text-right= Member.human_attribute_name 'grad_department'
+        .col-xs-8
+          p= @member.grad_department && @member.grad_department.text
+    .col-md-6.bg-warning
+      h2.text-center= I18n.t "ui.members.membership_status"
+      .row
+        .col-xs-4
+          p.text-right= Member.human_attribute_name 'member_type'
+        .col-xs-8
+          p= @member.member_type.text
+      .row
+        .col-xs-4
+          p.text-right= Member.human_attribute_name 'permanent'
+        .col-xs-8
+          p= I18n.t(@member.permanent ? 'yes' : 'no')
+      .row
+        .col-xs-4
+          p.text-right= Member.human_attribute_name 'membership?'
+        .col-xs-8
+          p= I18n.t(@member.membership? ? 'yes' : 'no')
+      .row
+        .col-xs-4
+          p.text-right= Member.human_attribute_name 'valid?'
+        .col-xs-8
+          p= I18n.t(@member.valid? ? 'yes' : 'no')
+      .row
+        .col-xs-4
+          p.text-right= Membership.model_name.human
+        .col-xs-6
+          = link_to member_memberships_path(@member) do
+            = I18n.t("ui.list")
+            span.glyphicon.glyphicon-list-alt

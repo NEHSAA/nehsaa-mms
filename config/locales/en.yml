@@ -20,4 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  nehsaa: "NEHS Alumni Association"
+  ui:
+    about: "About"
+    login: "Sign In"
+    member_management: "Member Management"

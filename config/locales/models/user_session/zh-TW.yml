@@ -1,0 +1,6 @@
+zh-TW:
+  authlogic:
+    attributes:
+      user_session:
+        login: "登入名稱"
+        password: "密碼"
